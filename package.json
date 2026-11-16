@@ -1,0 +1,57 @@
+{
+  "name": "chaos-table",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "iwsdk dev restart --open --foreground",
+    "dev:runtime": "vite",
+    "dev:down": "iwsdk dev down",
+    "dev:status": "iwsdk dev status",
+    "reference:status": "iwsdk reference status",
+    "reference:warmup": "iwsdk reference warmup",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.server.json && tsc --noEmit -p cloud/tsconfig.json",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server/main.ts",
+    "test": "node scripts/run-tests.mjs",
+    "test:interaction": "node scripts/verify-hand-mechanics.mjs",
+    "setup": "node scripts/setup.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "dev:all": "node scripts/dev-all.mjs",
+    "start": "node scripts/start-production.mjs",
+    "check": "npm run doctor && npm run typecheck && npm test && npm run test:interaction && npm run build",
+    "cloud:types": "wrangler types cloud/worker-configuration.d.ts",
+    "cloud:dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@iwsdk/core": "1.1.0-rc.2",
+    "@pmndrs/uikit": "^1.0.74",
+    "@pmndrs/uikit-horizon": "^1.0.74",
+    "@pmndrs/uikit-lucide": "^1.0.74",
+    "three": "npm:super-three@0.185.0",
+    "trystero": "^0.27.0"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "^4.5.1",
+    "@gltf-transform/extensions": "^4.5.1",
+    "@gltf-transform/functions": "^4.5.1",
+    "@iwsdk/cli": "1.1.0-rc.2",
+    "@iwsdk/reference": "1.1.0-rc.2",
+    "@iwsdk/vite-plugin-dev": "1.1.0-rc.2",
+    "@meta-quest/metavr": "^1.8.1",
+    "@types/three": "^0.185.0",
+    "esbuild": "0.28.2",
+    "typescript": "^5.5.0",
+    "vite": "^7.1.4",
+    "wrangler": "^4.162.0"
+  },
+  "overrides": {
+    "sharp": "0.35.5",
+    "three": "npm:super-three@0.185.0"
+  },
+  "engines": {
+    "node": ">=22.18.0 <23.0.0-0 || >=24.0.0"
+  }
+}

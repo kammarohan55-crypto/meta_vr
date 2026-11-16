@@ -1,0 +1,23 @@
+// AFTERHOURS on Cloudflare Workers (free plan): the built game as static assets plus online play
+// (Durable Objects). `npm run cloud:dev` runs it locally; `npm run deploy` publishes it.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "afterhours",
+  "main": "cloud/worker.ts",
+  "compatibility_date": "2026-11-15",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // only these paths run the Worker; every other file is served directly (free, unmetered)
+    "run_worker_first": ["/chaos/*", "/chaos-ws"]
+  },
+  "durable_objects": {
+    "bindings": [
+      { "name": "ROOMS", "class_name": "TableRoom" },
+      { "name": "MATCH", "class_name": "Matchmaker" }
+    ]
+  },
+  // the free plan runs SQLite-backed Durable Objects (these keep their state in memory only)
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["TableRoom", "Matchmaker"] }],
+  "observability": { "enabled": true }
+}

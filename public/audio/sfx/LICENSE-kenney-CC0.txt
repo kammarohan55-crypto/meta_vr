@@ -1,0 +1,20 @@
+	Sound effects in this folder
+
+	by  Kenney Vleugels (Kenney.nl), from these packs:
+	  Casino Audio (1.1)     card-*.ogg, cards-pack-take-out-1.ogg
+	  Interface Sounds       drop_*, confirmation_001, pluck_*, bong_001
+	  Impact Sounds          impact*.ogg
+	  Music Jingles          jingles_*.ogg
+
+			------------------------------
+
+	License (Creative Commons Zero, CC0)
+	http://creativecommons.org/publicdomain/zero/1.0/
+
+	You may use these assets in personal and commercial projects.
+	Credit (Kenney or www.kenney.nl) would be nice but is not mandatory.
+
+			------------------------------
+
+	Donate:   http://support.kenney.nl
+	Request:  http://request.kenney.nl

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#101b1b" />
+    <link rel="icon" href="data:," />
+    <title>Afterhours — The Card Lounge</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #101b1b; overflow: hidden; }
+      #scene-container { position: fixed; inset: 0; }
+      #loading {
+        position: fixed; left: 50%; bottom: 8vh; transform: translateX(-50%);
+        font: 600 15px/1.4 system-ui, sans-serif; letter-spacing: 0.04em;
+        color: #e3cda7; pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="scene-container"></div>
+    <div id="loading">Setting the table…</div>
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>

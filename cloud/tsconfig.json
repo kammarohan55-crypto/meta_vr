@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true,
+    "lib": [
+      "ES2022"
+    ],
+    "types": []
+  },
+  "include": [
+    "worker.ts",
+    "worker-configuration.d.ts",
+    "../shared/**/*.ts"
+  ],
+  "exclude": [
+    "../shared/**/*.test.ts"
+  ]
+}
